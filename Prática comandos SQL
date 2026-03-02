@@ -1,0 +1,21 @@
+USE BD120226732;
+
+SHOW TABLES;
+
+CREATE TABLE alunos(nome VARCHAR(100), RA INT PRIMARY KEY, curso VARCHAR(100));
+CREATE TABLE professores(nome VARCHAR(100), RA INT PRIMARY KEY, matéria VARCHAR(100));
+
+SELECT * FROM alunos;
+SELECT * FROM professores;
+
+INSERT INTO alunos(nome,RA,curso) VALUES('John Zenin',12345678,'Educação Física');
+INSERT INTO alunos(nome,RA,curso) VALUES('Leonardo Preste Praça',12673456,'Direito');
+INSERT INTO alunos(nome,RA,curso) VALUES('Beatriz Abreu',12372894,'Artes Visuais');
+INSERT INTO alunos(nome,RA,curso) VALUES('Bernardo dos Santos',12926890,'Psicologia');
+INSERT INTO alunos(nome,RA,curso) VALUES('Luciano Leme Barros',16289561,'Audiovisual');
+
+INSERT INTO professores(nome,RA,matéria) VALUES('Elaine Terrazas',02386398,'Cálculo I');
+INSERT INTO professores(nome,RA,matéria) VALUES('Jorge da Silva',02739903,'Cálculo II');
+INSERT INTO professores(nome,RA,matéria) VALUES('Francisco Messias',02773689,'CLP-Controladores Lógicos Programáveis');
+INSERT INTO professores(nome,RA,matéria) VALUES('Alexandra de Fátima',02360029,'Lingua Portuguesa');
+INSERT INTO professores(nome,RA,matéria) VALUES('Márcio Tomazetti',02779310,'Fotografia');
