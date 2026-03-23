@@ -1,9 +1,65 @@
-#Exercício 2
+-- 2)
 
 CREATE TABLE funcionarios(
-id INT PRIMARY KEY,
+id INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(100) NOT NULL,
 cargo VARCHAR(50) NOT NULL,
-salario DECIMAL(10,2) NOT NULL,
-data_admissao DATE NOT NULL,
+salario DECIMAL(10,2) NOT NULL
 );
+INSERT INTO funcionarios (nome,cargo,salario) VALUES
+	('João Paulo', 'Analista de Dados Júnior', '3200.00'),
+	('Matheus Santos', 'Desenvolvedor Júnior', '3200.00');
+
+-- 3)
+
+ALTER TABLE funcionarios
+ADD COLUMN data_admissao DATE NOT NULL;
+
+UPDATE funcionarios SET data_admissao='2023-01-30';
+
+INSERT INTO funcionarios (nome,cargo,salario,data_admissao) VALUES
+	('Ana Júlia', 'Analista de Dados Pleno', '5500.00', '2025-04-19'),
+	('Rami Malek', 'Designer Pleno', '5500.00', '2024-06-16');
+
+-- 4)
+
+ALTER TABLE funcionarios
+DROP COLUMN cargo;
+
+INSERT INTO funcionarios (nome,salario,data_admissao) VALUES
+	('Marcos Lelel', '5500.00', '2024-04-20'),
+	('Beatriz Abreu', '10000.00', '2023-10-12');
+    
+-- 5)
+
+ALTER TABLE funcionarios
+MODIFY COLUMN salario DECIMAL(12,2) NOT NULL;
+
+INSERT INTO funcionarios (nome,salario,data_admissao) VALUES
+	('José Otávio', '3400.00', '2024-04-20'),
+	('Leonardo Prestes', '13000.00', '2023-10-12');
+
+-- 6)
+
+CREATE TABLE departamentos(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL
+);
+
+ALTER TABLE funcionarios
+ADD COLUMN departamentos_id INT,
+ADD CONSTRAINT fk_departamentos FOREIGN KEY (departamentos_id) REFERENCES departamentos(id);
+
+INSERT INTO funcionarios (nome,salario,data_admissao,departamentos_id) VALUES
+	('Murilo Mariano', '4500.00', '2025-04-20','1'),
+	('Valentina Battio', '16000.00', '2022-10-12','2');
+    
+-- 7)
+
+ALTER TABLE departamentos
+ADD COLUMN orcamento DECIMAL(12,2);
+
+
+
+ALTER TABLE funcionarios    
+MODIFY COLUMN data_admissao DATE NOT NULL;
